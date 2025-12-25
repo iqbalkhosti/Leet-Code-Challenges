@@ -16,11 +16,30 @@ def twoSum(nums, target):
 
     return list_of_index
 
+# using hashmaps to solve it
+
+def two_sum_hash(nums, target):
+
+    dict_nums = {}
+
+    for i, n in enumerate(nums):
+        
+        need = target - n
+        
+#        print(need)
+        if need in dict_nums:
+ #           print(nums[i])
+            return [dict_nums[need], i]
+
+        dict_nums[n]= i
+
+        
+
 print("should print([0,2]")
-print(twoSum([2,3,7,10], 9))
+print(two_sum_hash([2,3,7,10], 9))
 print("should print[1,0]")
-print(twoSum([1,0,1,9], 1))
+print(two_sum_hash([1,0,1,9], 1))
 print("should print[0,7]")
-print(twoSum([2,9,0,0,1,1,1,8],10))
+print(two_sum_hash([2,9,0,0,1,1,1,8],10))
 
 
